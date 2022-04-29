@@ -1,0 +1,35 @@
+<header>
+    <img id="logo" src="https://www.google.com/logos/doodles/2022/toots-thielemans-100th-birthday-6753651837109398.4-l.webp" alt="logo pokémon">
+    <nav>
+        <ul>
+            <a href="/"><li>Home</a></li></a>
+
+            <li>
+                <label for="switch">
+                    <input type="checkbox" id="switch"> Dark Mode
+                </label>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    const nightModeStorage = localStorage.getItem('gmtNightMode');
+    const nightMode = document.querySelector('#switch');
+
+    if (nightModeStorage) {
+        document.documentElement.classList.add('night-mode');
+        nightMode.checked = true;
+    };
+
+
+    nightMode.addEventListener('click', () => {
+    document.documentElement.classList.toggle('night-mode')
+
+    if (document.documentElement.classList.contains('night-mode')) {
+        localStorage.setItem('gmtNightMode', true)
+        return
+    }
+    localStorage.removeItem('gmtNightMode')
+    });
+</script>
