@@ -1,0 +1,28 @@
+{
+  "name": "projeto3_m2",
+  "version": "1.0.0",
+  "description": "Terceiro e último projeto do segundo módulo criado para a Blue Edtech!",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hethus/Projeto3_m2.git"
+  },
+  "author": "Giovanne Berteli Comba",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hethus/Projeto3_m2/issues"
+  },
+  "homepage": "https://github.com/hethus/Projeto3_m2#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ejs": "^3.1.7",
+    "express": "^4.18.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
