@@ -5,9 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="/img/icon.ico" />
     <title>Projeto 3 - modulo 2</title>
 </head>
 <body>
-    <%- include('./partials/header.ejs') %> 
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <section id="monster">
+            <% monstruario.forEach(monstro => { %>
+                <article class="card">
+                    <div class="nome_monstro"> <%= monstro.nome %>  </div>
+                    <div class="img_monstro"> <img src="<%= monstro.imagem %>" alt="Imagem do monstro">  </div>
+                    <hr>
+                    <div class="tipo_monstro"> <%= monstro.tipo %> </div>
+                </article>
+    
+            <% }) %>
+
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+ 
 </body>
 </html>
