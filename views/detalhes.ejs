@@ -33,7 +33,19 @@
                 </div>
             </div>
 
-            <div id="side">
+            <% if (monstro.desastre == 1) { %>
+                <div id="side" class="si_fraco">
+            <% } else if (monstro.desastre == 2) { %>
+                <div id="side" class="si_mediano">
+            <% } else if (monstro.desastre == 3) { %>
+                <div id="side" class="si_forte">
+            <% } else if (monstro.desastre == 4) { %>
+                <div id="side" class="si_muito_forte">
+            <% } else if (monstro.desastre == 5) { %>
+                <div id="side" class="si_ameaca">
+            <% } else if (monstro.desastre == 6) { %>
+                <div id="side" class="si_cataclisma">
+            <% } %>
                 <div id="name">
                     <h1><%= monstro.nome %></h1>
                 </div>
@@ -71,7 +83,7 @@
                         <% } else if (monstro.desastre == 5) { %>
                             <td> Ameaça </td>
                         <% } else if (monstro.desastre == 6) { %>
-                            <td> Desastre </td>
+                            <td> Cataclisma </td>
                         <% } %>
                       </tr>
 

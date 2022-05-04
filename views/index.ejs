@@ -12,6 +12,9 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
+        <div id="teste">
+
+        
         <section id="monster">
             <% monstruario.forEach(monstro => { %>
                 <% if (monstro.desastre == 1) { %>
@@ -25,7 +28,7 @@
                 <% } else if (monstro.desastre == 5) { %>
                     <article class="flip" id="ameaca">
                 <% } else if (monstro.desastre == 6) { %>
-                    <article class="flip" id="desastre">
+                    <article class="flip" id="cataclisma">
                 <% } %>
                     <article class="card front">
                         <div class="nome_monstro"> <%= monstro.nome %> </div>
@@ -68,7 +71,7 @@
                                       <% } else if (monstro.desastre == 5) { %>
                                           <td> Ameaça </td>
                                       <% } else if (monstro.desastre == 6) { %>
-                                          <td> Desastre </td>
+                                          <td> Cataclisma </td>
                                       <% } %>
                                     </tr>
               
@@ -94,7 +97,7 @@
             <% }) %>
 
         </section>
-
+        </div>
     </main>
 
     <%- include('./partials/footer.ejs') %>

@@ -48,6 +48,16 @@ body {
 main {
     min-height: 80%;
     padding: 15px;
+    padding: 30px;
+}
+
+div#teste {
+    min-height: 100%;
+    background-color: #906faf79;
+    padding: 40px 40px 70px 40px;
+    margin: 50px;
+    border-radius: 100px;
+    
 }
 
 section#monster {
@@ -189,7 +199,7 @@ article.flip {
     border-radius: 40px;
 }
 
-#muito_forte.front:hover {
+#muito_forte .front:hover {
     border: 1px solid #000;
     box-shadow: 0 0 10px rgb(255, 255, 255);
     transform: scale(1.1);
@@ -224,12 +234,12 @@ article.flip {
     cursor: pointer;
 }
 
-.flip#desastre {
+.flip#cataclisma {
     background-color: #ffd700;
     border-radius: 40px;
 }
 
-#desastre .front:hover {
+#cataclisma .front:hover {
     border: 1px solid #000;
     box-shadow: 0 0 10px rgb(255, 255, 255);
     transform: scale(1.1);
@@ -237,7 +247,7 @@ article.flip {
     background-color: #ffd700;
 }
 
-#desastre .back:hover {
+#cataclisma .back:hover {
     transform: scale(1.1) rotateY(180deg);
     background-color: #ffd700;
     border: 1px solid #000;
@@ -307,10 +317,45 @@ section.container div#img img {
     max-width: 60ch;
 }
 
-#side {
+div#side.si_fraco{
     max-width: 280px;
     border-radius: 5px;
-    background-color: #888;
+    background-color: #7e7e7e;
+    padding: 5px;
+}
+
+div#side.si_mediano{
+    max-width: 280px;
+    border-radius: 5px;
+    background-color: #00aa4c;
+    padding: 5px;
+}
+
+div#side.si_forte{
+    max-width: 280px;
+    border-radius: 5px;
+    background-color: #008cbe;
+    padding: 5px;
+}
+
+div#side.si_muito_forte{
+    max-width: 280px;
+    border-radius: 5px;
+    background-color: #ac00e6;
+    padding: 5px;
+}
+
+div#side.si_ameaca{
+    max-width: 280px;
+    border-radius: 5px;
+    background-color: #db9e1c;
+    padding: 5px;
+}
+
+div#side.si_cataclisma{
+    max-width: 280px;
+    border-radius: 5px;
+    background-color: #ffd700;
     padding: 5px;
 }
 
