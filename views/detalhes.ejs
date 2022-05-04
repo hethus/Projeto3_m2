@@ -6,9 +6,133 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/img/icon.ico"/>
-    <title>Detalhes <%= monstro.nome %> </title>
+    <title>Detalhes <%= monstro.nome %></title>
 </head>
 <body>
-    <%- include('./partials/header.ejs') %> 
+    <%- include('./partials/header.ejs') %>
+
+    <main>
+        <section class="container">
+
+            <div id="more">
+                <div class="tab">
+
+                    <button class="tablinks" onclick="alterarDesc(event, 'Descricao')" id="defaultOpen">Descrição</button>
+                    <button class="tablinks" onclick="alterarDesc(event, 'Caracteristicas')">Características</button>
+                </div>
+
+                <div id="Descricao" class="tabcontent">
+                    <h3>Descrição: </h3>
+                    <p><%= monstro.descricao %></p>
+
+                </div>
+
+                <div id="Caracteristicas" class="tabcontent">
+                    <h3>Características: </h3>
+                    <p><%= monstro.caracteristicas %></p>
+                </div>
+            </div>
+
+            <div id="side">
+                <div id="name">
+                    <h1><%= monstro.nome %></h1>
+                </div>
+    
+                <div id="img">
+                  <img src="<%= monstro.imagem %>" alt="<%= monstro.nome %>" />
+                </div>
+        
+                <table>
+                  <tr>
+                    <thead>
+                      <th colspan="2">Detalhes</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sexo:</td>
+                            <td><%= monstro.sexo %></td>
+                        </tr>
+
+                      <tr>
+                        <td>Raça:</td>
+                        <td><%= monstro.raca %></td>
+                      </tr>
+                      
+                      <tr>
+                      <td>Desastre:</td>
+                        <% if (monstro.desastre == 1) { %>
+                            <td> Fraco </td>
+                        <% } else if (monstro.desastre == 2) { %>
+                            <td> Mediano </td>
+                        <% } else if (monstro.desastre == 3) { %>
+                            <td> Forte </td>
+                        <% } else if (monstro.desastre == 4) { %>
+                            <td> Muito forte </td>
+                        <% } else if (monstro.desastre == 5) { %>
+                            <td> Ameaça </td>
+                        <% } else if (monstro.desastre == 6) { %>
+                            <td> Desastre </td>
+                        <% } %>
+                      </tr>
+
+                      <tr>
+                        <td>Agressivo? </td>
+                        <td><%= monstro.agressivo %></td>
+                      </tr>
+        
+                      <tr>
+                        <td>Idade:</td>
+                        <td><%= monstro.idade %></td>
+                      </tr>
+        
+                      <tr>
+                        <td>Altura (em m):</td>
+                        <td><%= monstro.altura %></td>
+                      </tr>
+        
+                      <tr>
+                        <td>Peso (kg):</td>
+                        <td><%= monstro.peso %></td>
+                      </tr>
+
+                      <tr>
+                        <td>Registrado por:</td>
+                        <td><%= monstro.pesquisador %></td>
+                      </tr>
+                    </tbody>
+                  </tr>
+                </table> 
+            </div>
+
+        </section>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
 </body>
+
+<script>
+    function alterarDesc(evt, guia) {
+  // Declare all variables
+  let i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(guia).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+document.getElementById("defaultOpen").click();
+</script>
 </html>

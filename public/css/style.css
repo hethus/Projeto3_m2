@@ -11,7 +11,11 @@ header {
     background-color: #f2f2f2;
     align-items: center;
     padding: 0 10px;
-  }
+}
+  
+header a {
+    height: 100%;
+}
 
 header ul {
     list-style: none;
@@ -21,7 +25,7 @@ header ul {
     gap: 16px;
 }
 
-header a {
+header ul a {
     text-decoration: none;
     font-size: 20px;
     font-weight: bold;
@@ -31,7 +35,7 @@ header a:hover {
     color: #800000;
 }
 
-header img#logo {
+header a img#logo {
     height: 100%;
     padding: 0 20px 0 0;
 }
@@ -43,8 +47,17 @@ body {
 
 main {
     min-height: 80%;
-
+    padding: 15px;
 }
+
+section#monster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    padding-top: 20px;
+}
+
 
 article.card {
     height: 300px;
@@ -53,7 +66,6 @@ article.card {
     padding: 16px;
     background-color: rgba(255, 255, 255, 0.275);
     border-radius: 40px;
-    color: #3c25a4;
 }
 
 article.card div.img_monstro {
@@ -63,6 +75,286 @@ article.card div.img_monstro {
 article.card div.img_monstro img {
     height: 100%;
     width: 100%;
+}
+
+article.card div.back_detalhes {
+    height: 70%;
+}
+
+article.card {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    /* */
+}
+
+article.card div.tipo_monstro {
+    display: flex;
+    flex-direction: column;
+    height: 20%;
+    justify-content: center;
+    align-items: center;
+  }
+
+article.front {
+    transform: rotateX(0deg);
+    -webkit-transform: rotateX(0deg);
+    /* */
+}
+
+article.back {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0px;
+    /* */
+}
+
+article.flip {
+    -webkit-transition: transform 0.6s;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    /* */
+}
+
+.flip.virar {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    /* */
+}
+
+.flip#fraco {
+    background-color: #7e7e7e;
+    border-radius: 40px;
+}
+
+#fraco .front:hover {
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #7e7e7e;
+}
+
+#fraco .back:hover {
+    transform: scale(1.1) rotateY(180deg);
+    background-color: #7e7e7e;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.flip#mediano {
+    background-color: #00aa4c;
+    border-radius: 40px;
+}
+
+#mediano .front:hover {
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #00aa4c;
+}
+
+#mediano .back:hover {
+    transform: scale(1.1) rotateY(180deg);
+    background-color: #00aa4c;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.flip#forte {
+    background-color: #008cbe;
+    border-radius: 40px;
+}
+
+#forte .front:hover {
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #008cbe;
+}
+
+#forte .back:hover {
+    transform: scale(1.1) rotateY(180deg);
+    background-color: #008cbe;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.flip#muito_forte{
+    background-color: #ac00e6;
+    border-radius: 40px;
+}
+
+#muito_forte.front:hover {
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #ac00e6;
+}
+
+#muito_forte .back:hover {
+    transform: scale(1.1) rotateY(180deg);
+    background-color: #ac00e6;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.flip#ameaca {
+    background-color: #db9e1c;
+    border-radius: 40px;
+}
+
+#ameaca .front:hover {
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #db9e1c;
+}
+
+#ameaca .back:hover {
+    transform: scale(1.1) rotateY(180deg);
+    background-color: #db9e1c;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.flip#desastre {
+    background-color: #ffd700;
+    border-radius: 40px;
+}
+
+#desastre .front:hover {
+    border: 1px solid #000;
+    box-shadow: 0 0 10px rgb(255, 255, 255);
+    transform: scale(1.1);
+    cursor: pointer;
+    background-color: #ffd700;
+}
+
+#desastre .back:hover {
+    transform: scale(1.1) rotateY(180deg);
+    background-color: #ffd700;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+article.card a {
+    text-decoration: none;
+}
+
+article.card a:hover{
+    color: #800000;
+}
+
+section.container {
+    max-width: 960px;
+    margin: 0 auto;
+    display: grid;
+    padding: 0 20px 0 20px;
+    gap: 16px;
+    grid-template-areas: 
+    "more side";
+    justify-content: center;
+}
+
+section.container div#img {
+    width: 17em;
+}
+
+section.container div#img img {
+    height: 100%;
+    width: 100%;
+}
+
+.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+.tab button:hover {
+    background-color: #ddd;
+}
+
+.tab button.active {
+    background-color: #ccc;
+}
+
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+.tabcontent p {
+    max-width: 60ch;
+}
+
+#side {
+    max-width: 280px;
+    border-radius: 5px;
+    background-color: #888;
+    padding: 5px;
+}
+
+#more {
+    max-width: 660px;
+    min-width: 230px;
+    border-radius: 20px;
+}
+
+@media(max-width: 515px){
+    section.container {
+        max-width: 960px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-areas: 
+        "more"
+        "side";
+    }
+
+    #more{
+        order: 1;
+        max-width: 660px;
+        min-width: 230px;
+        border-radius: 20px;
+    }
+}
+
+table {
+    text-align: center;
+    width: 280px;
+}
+
+table td {
+    border: 1px solid #ccc;
+    padding: 3px;
+    border-radius: 15px;
+}
+
+table.tabela_index {
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    padding-top: 20px;
 }
 
 footer {

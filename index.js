@@ -21,38 +21,66 @@ const monstruario = [
     {
       id: 1,
       nome: "Bulbasaur",
-      descricao:
-        "Há uma semente de planta nas costas desde o dia em que este Pokémon nasce. A semente cresce lentamente.",
-      tipo: "Planta",
+      desastre: 5,
+      idade: 50,
+      altura: 0.7,
+      peso: 6.9,
+      agressivo: false,
+      sexo: "Masculino",
+      raca: "Planta",
+      pesquisador: "Professor Oak",
       imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
-      altura: "0.7",
-      peso: "6.9",
-      categoria: "Semente",
-      habilidade: "Overgrow",
+      descricao:
+      "Há uma semente de planta nas costas desde o dia em que este Pokémon nasce. A semente cresce lentamente.",
+      caracteristicas: "Semente",
     },
     {
       id: 2,
-      nome: "Charmander",
+      nome: "Bulbasaur",
+      desastre: 2,
+      idade: 50,
+      altura: 0.7,
+      peso: 6.9,
+      agressivo: false,
+      sexo: "Masculino",
+      raca: "Planta",
+      pesquisador: "Professor Oak",
+      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
       descricao:
-        "Tem preferência por coisas quentes. Quando chove, diz-se que o vapor jorra da ponta de sua cauda.",
-      tipo: "Fogo",
-      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/004.png",
-      altura: "0.6",
-      peso: "8.5",
-      categoria: "Lagarto",
-      habilidade: "Blaze",
+      "Há uma semente de planta nas costas desde o dia em que este Pokémon nasce. A semente cresce lentamente.",
+      caracteristicas: "Semente",
     },
     {
       id: 3,
-      nome: "Squirtle",
+      nome: "Bulbasaur",
+      desastre: 3,
+      idade: 50,
+      altura: 0.7,
+      peso: 6.9,
+      agressivo: false,
+      sexo: "Masculino",
+      raca: "Planta",
+      pesquisador: "Professor Oak",
+      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
       descricao:
-        "Quando retrai seu longo pescoço em sua concha, esguicha água com uma vigorosa força.",
-      tipo: "Água",
-      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png",
-      altura: "0.5",
-      peso: "9.0",
-      categoria: "Pequena tartaruga",
-      habilidade: "Torrent",
+      "Há uma semente de planta nas costas desde o dia em que este Pokémon nasce. A semente cresce lentamente.",
+      caracteristicas: "Semente",
+    },
+    {
+      id: 1,
+      nome: "Bulbasaur",
+      desastre: 4,
+      idade: 50,
+      altura: 0.7,
+      peso: 6.9,
+      agressivo: false,
+      sexo: "Masculino",
+      raca: "Planta",
+      pesquisador: "Professor Oak",
+      imagem: "https://assets.pokemon.com/assets/cms2/img/pokedex/full/001.png",
+      descricao:
+      "Há uma semente de planta nas costas desde o dia em que este Pokémon nasce. A semente cresce lentamente.",
+      caracteristicas: "Semente",
     },
 ];
 
@@ -61,9 +89,15 @@ app.get('/', (req, res) => {
     res.render('index', { monstruario });
 });
 
-app.get('/detalhes', (req, res) => {
-    res.render('detalhes');
-})
+app.get("/detalhes/:id", (req, res) => {
+  let monstro;
+  monstruario.filter((element) => {
+    if (element.id == req.params.id) {
+      monstro = element;
+    }
+  });
+  res.render("detalhes", { monstro });
+});
 
 app.get('/cadastro', (req, res) => {
     res.render('cadastro');

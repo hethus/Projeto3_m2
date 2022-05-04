@@ -14,13 +14,83 @@
     <main>
         <section id="monster">
             <% monstruario.forEach(monstro => { %>
-                <article class="card">
-                    <div class="nome_monstro"> <%= monstro.nome %>  </div>
-                    <div class="img_monstro"> <img src="<%= monstro.imagem %>" alt="Imagem do monstro">  </div>
-                    <hr>
-                    <div class="tipo_monstro"> <%= monstro.tipo %> </div>
+                <% if (monstro.desastre == 1) { %>
+                    <article class="flip" id="fraco">
+                <% } else if (monstro.desastre == 2) { %>
+                    <article class="flip" id="mediano">
+                <% } else if (monstro.desastre == 3) { %>
+                    <article class="flip" id="forte">
+                <% } else if (monstro.desastre == 4) { %>
+                    <article class="flip" id="muito_forte">
+                <% } else if (monstro.desastre == 5) { %>
+                    <article class="flip" id="ameaca">
+                <% } else if (monstro.desastre == 6) { %>
+                    <article class="flip" id="desastre">
+                <% } %>
+                    <article class="card front">
+                        <div class="nome_monstro"> <%= monstro.nome %> </div>
+                        <div class="img_monstro"> <img src="<%= monstro.imagem %>" alt="Imagem do monstro">  </div>
+                        <hr>
+                        <div class="tipo_monstro"> 
+                            <div><%= monstro.raca %></div> 
+                        </div>
+                    </article>
+
+                    <article class="card back">
+                        <div class="nome_monstro"> <%= monstro.nome %> </div>
+                        <div class="back_detalhes">
+                            <table class="tabela_index">
+                                <tr class="tr_index">
+                                  <thead class="thead_index">
+                                    <th colspan="2">Detalhes</th>
+                                  </thead>
+                                  <tbody>
+                                      <tr>
+                                          <td>Sexo:</td>
+                                          <td><%= monstro.sexo %></td>
+                                      </tr>
+              
+                                    <tr>
+                                      <td>Raça:</td>
+                                      <td><%= monstro.raca %></td>
+                                    </tr>
+                                    
+                                    <tr>
+                                    <td>Desastre:</td>
+                                      <% if (monstro.desastre == 1) { %>
+                                          <td> Fraco </td>
+                                      <% } else if (monstro.desastre == 2) { %>
+                                          <td> Mediano </td>
+                                      <% } else if (monstro.desastre == 3) { %>
+                                          <td> Forte </td>
+                                      <% } else if (monstro.desastre == 4) { %>
+                                          <td> Muito forte </td>
+                                      <% } else if (monstro.desastre == 5) { %>
+                                          <td> Ameaça </td>
+                                      <% } else if (monstro.desastre == 6) { %>
+                                          <td> Desastre </td>
+                                      <% } %>
+                                    </tr>
+              
+                                    <tr>
+                                      <td>Agressivo? </td>
+                                      <td><%= monstro.agressivo %></td>
+                                    </tr>
+                      
+                                    <tr>
+                                      <td>Idade:</td>
+                                      <td><%= monstro.idade %></td>
+                                    </tr>
+                                  </tbody>
+                                </tr>
+                              </table> 
+                        </div>
+                        <hr>
+                        <div class="link"><a href="/detalhes/<%= monstro.id %>">Detalhes</a></div>
+                    </article>
+
                 </article>
-    
+
             <% }) %>
 
         </section>
@@ -30,4 +100,13 @@
     <%- include('./partials/footer.ejs') %>
  
 </body>
+<script>
+    const cards = document.querySelectorAll(".flip");
+
+    function flipCard() {
+        this.classList.toggle("virar");
+    }
+    cards.forEach((card) => card.addEventListener("click", flipCard));
+
+</script>
 </html>
