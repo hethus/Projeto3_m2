@@ -116,7 +116,7 @@ const monstruario = [
     },
     {
       id: 7,
-      nome: "Bulbasaur",
+      nome: "BulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaurBulbasaur BulbasaurBulbasaurBulbasaur",
       desastre: 6,
       idade: 50,
       altura: 0.7,
@@ -137,7 +137,7 @@ const monstruario = [
       idade: 50,
       altura: 0.7,
       peso: 6.9,
-      agressivo: false,
+      agressivo: true,
       sexo: "Masculino",
       raca: "Planta",
       pesquisador: "Professor Oak",

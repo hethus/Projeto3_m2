@@ -12,6 +12,7 @@
     <%- include('./partials/header.ejs') %>
 
     <main>
+      <div id="teste">
         <section class="container">
 
             <div id="more">
@@ -89,7 +90,11 @@
 
                       <tr>
                         <td>Agressivo? </td>
-                        <td><%= monstro.agressivo %></td>
+                        <% if (monstro.agressivo == false) { %>
+                          <td> Não </td>
+                        <% } else if (monstro.agressivo == true) { %>
+                            <td> Sim </td>
+                        <% } %>
                       </tr>
         
                       <tr>
@@ -117,7 +122,7 @@
             </div>
 
         </section>
-
+      </div>
     </main>
 
     <%- include('./partials/footer.ejs') %>
