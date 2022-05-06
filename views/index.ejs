@@ -33,10 +33,11 @@
                     <article class="card front">
                         <div class="nome_monstro"> <%= monstro.nome %> </div>
                         <hr>
-                        <div class="img_monstro"> <img src="<%= monstro.imagem %>" alt="Imagem do monstro">  </div>
+                        <div class="img_monstro"> <img src="<%= monstro.imagem %>" alt="Imagem do monstro <%= monstro.nome %> ">  </div>
                         <hr>
                         <div class="tipo_monstro"> 
-                            <div><%= monstro.raca %></div> 
+                            <div class="verificacao"><%= monstro.raca %></div>
+                            <div class="verificacao"><%= monstro.pesquisador %></div> 
                         </div>
                     </article>
 
@@ -52,12 +53,12 @@
                                   <tbody>
                                       <tr>
                                           <td>Sexo:</td>
-                                          <td><%= monstro.sexo %></td>
+                                          <td class="verificacao"><%= monstro.sexo %></td>
                                       </tr>
               
                                     <tr>
                                       <td>Raça:</td>
-                                      <td><%= monstro.raca %></td>
+                                      <td class="verificacao"><%= monstro.raca %></td>
                                     </tr>
                                     
                                     <tr>

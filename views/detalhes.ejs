@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/img/icon.ico"/>
-    <title>Detalhes <%= monstro.nome %></title>
+    <title>Detalhes <%= deMonstro.nome %></title>
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
@@ -24,35 +24,35 @@
 
                 <div id="Descricao" class="tabcontent">
                     <h3>Descrição: </h3>
-                    <p><%= monstro.descricao %></p>
+                    <p><%= deMonstro.descricao %></p>
 
                 </div>
 
                 <div id="Caracteristicas" class="tabcontent">
                     <h3>Características: </h3>
-                    <p><%= monstro.caracteristicas %></p>
+                    <p><%= deMonstro.caracteristica %></p>
                 </div>
             </div>
 
-            <% if (monstro.desastre == 1) { %>
+            <% if (deMonstro.desastre == 1) { %>
                 <div id="side" class="si_fraco">
-            <% } else if (monstro.desastre == 2) { %>
+            <% } else if (deMonstro.desastre == 2) { %>
                 <div id="side" class="si_mediano">
-            <% } else if (monstro.desastre == 3) { %>
+            <% } else if (deMonstro.desastre == 3) { %>
                 <div id="side" class="si_forte">
-            <% } else if (monstro.desastre == 4) { %>
+            <% } else if (deMonstro.desastre == 4) { %>
                 <div id="side" class="si_muito_forte">
-            <% } else if (monstro.desastre == 5) { %>
+            <% } else if (deMonstro.desastre == 5) { %>
                 <div id="side" class="si_ameaca">
-            <% } else if (monstro.desastre == 6) { %>
+            <% } else if (deMonstro.desastre == 6) { %>
                 <div id="side" class="si_cataclisma">
             <% } %>
                 <div id="name">
-                    <h1><%= monstro.nome %></h1>
+                    <h1><%= deMonstro.nome %></h1>
                 </div>
     
                 <div id="img">
-                  <img src="<%= monstro.imagem %>" alt="<%= monstro.nome %>" />
+                  <img src="<%= deMonstro.imagem %>" alt="Imagem do monstro <%= deMonstro.nome %>" />
                 </div>
         
                 <table>
@@ -63,58 +63,58 @@
                     <tbody>
                         <tr>
                             <td>Sexo:</td>
-                            <td><%= monstro.sexo %></td>
+                            <td><%= deMonstro.sexo %></td>
                         </tr>
 
                       <tr>
                         <td>Raça:</td>
-                        <td><%= monstro.raca %></td>
+                        <td><%= deMonstro.raca %></td>
                       </tr>
                       
                       <tr>
                       <td>Desastre:</td>
-                        <% if (monstro.desastre == 1) { %>
+                        <% if (deMonstro.desastre == 1) { %>
                             <td> Fraco </td>
-                        <% } else if (monstro.desastre == 2) { %>
+                        <% } else if (deMonstro.desastre == 2) { %>
                             <td> Mediano </td>
-                        <% } else if (monstro.desastre == 3) { %>
+                        <% } else if (deMonstro.desastre == 3) { %>
                             <td> Forte </td>
-                        <% } else if (monstro.desastre == 4) { %>
+                        <% } else if (deMonstro.desastre == 4) { %>
                             <td> Muito forte </td>
-                        <% } else if (monstro.desastre == 5) { %>
+                        <% } else if (deMonstro.desastre == 5) { %>
                             <td> Ameaça </td>
-                        <% } else if (monstro.desastre == 6) { %>
+                        <% } else if (deMonstro.desastre == 6) { %>
                             <td> Cataclisma </td>
                         <% } %>
                       </tr>
 
                       <tr>
                         <td>Agressivo? </td>
-                        <% if (monstro.agressivo == false) { %>
+                        <% if (deMonstro.agressivo == false) { %>
                           <td> Não </td>
-                        <% } else if (monstro.agressivo == true) { %>
+                        <% } else if (deMonstro.agressivo == true) { %>
                             <td> Sim </td>
                         <% } %>
                       </tr>
         
                       <tr>
                         <td>Idade:</td>
-                        <td><%= monstro.idade %></td>
+                        <td><%= deMonstro.idade %></td>
                       </tr>
         
                       <tr>
                         <td>Altura (em m):</td>
-                        <td><%= monstro.altura %></td>
+                        <td><%= deMonstro.altura %></td>
                       </tr>
         
                       <tr>
                         <td>Peso (kg):</td>
-                        <td><%= monstro.peso %></td>
+                        <td><%= deMonstro.peso %></td>
                       </tr>
 
                       <tr>
                         <td>Registrado por:</td>
-                        <td><%= monstro.pesquisador %></td>
+                        <td><%= deMonstro.pesquisador %></td>
                       </tr>
                     </tbody>
                   </tr>
