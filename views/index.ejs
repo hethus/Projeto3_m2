@@ -6,15 +6,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="/img/icon.ico" />
-    <title>Projeto 3 - modulo 2</title>
+    <title>Monstruario</title>
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
 
     <main>
+
+        <div id="apresentacao">
+            <p>
+                <span>
+                    Olá, esse é o <b>MONSTRUARIO</b>, um mostruário de monstros! Sendo o terceiro e último projeto do segundo módulo do curso de desenvolvedor Full Stack!
+                </span>
+                
+                <br>
+                <br>
+                <span>
+                    Peço que faça um pouco de Role Play e imagine um mundo fictício, onde vivemos no ano de 2022, mas há três anos um abalo sísmico aconteceu.
+                </span>
+                
+                <br>
+                <span>
+                    O tremor foi tão forte que desequilibrou a ordem natural do mundo, monstros começaram a surgir, portais estranhos se abriram.
+                </span>
+                
+                <br>
+                <br>
+                <span>
+                    As pessoas de todo o mundo se viam indefesas perante a essa invasão estranha, infelizmente não demorou muito para que os monstros começassem a caçar os seres humanos, muitos de nós morreram...
+                </span>
+                <br>
+                <span>
+                    Para acabar com os monstros, os governos se uniram e criaram o Monstruario, um sistema unificado de pesquisa para estudar os monstros e os seus comportamentos, para facilitar a caça deles.
+                </span>
+                
+                <br>
+                <span>
+                    Pesquisadores ao redor do mundo se uniram a nós, mas ainda somos poucos, o sistema ainda está no começo, precisamos de toda a ajuda possível, por favor, se tiver dados sobre algum monstro, não hesite em cadastrar ele!
+                </span>
+                
+            </p>
+            <p id="final">-Presidente e Coordenador Geral do Monstruario-</p>
+        </div>
+
         <div id="teste">
 
-        
+            <h1 id="titulo">Monstros cadastrados:</h1>
+
         <section id="monster">
             <% monstruario.forEach(monstro => { %>
                 <% if (monstro.desastre == 1) { %>
@@ -96,7 +134,12 @@
                               </table> 
                         </div>
                         <hr>
-                        <div class="link"><a href="/detalhes/<%= monstro.id %>">Detalhes</a></div>
+                        <section id="atributos">
+                            <div class="link"><a href="/detalhes/<%= monstro.id %>">Detalhes...</a></div>
+                            <div class="link"><a href="/detalhes/<%= monstro.id %>">Editar...</a></div>
+                            <div class="link"><a href="/detalhes/<%= monstro.id %>">Apagar...</a></div>
+                        </section>
+                        
                     </article>
 
                 </article>

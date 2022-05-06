@@ -17,18 +17,23 @@
                 <section id="formulario">
                     <form method="post" action="/cadastro">
                       <fieldset id="fieldPrimario">
-                        <legend>Cadastro de Monstros!</legend>
-                        
+
+                        <legend>Cadastro de Monstro!</legend>
+                        <hr>
+
                         <fieldset>
                           <label for="nome">Nome:</label>
                           <input type="text" name="nome" required />
                         </fieldset>
-            
+                        <hr>
+                        
                         <fieldset>
                           <label for="idade">Idade:</label>
                           <input type="text" name="idade" required />
                         </fieldset>
-            
+                        
+                        <hr>
+
                         <fieldset>
                           <label for="desastre">Nível de desastre:</label>
                           <select name="desastre" required>
@@ -41,37 +46,40 @@
                             <option value="6">Cataclisma</option>
                           </select>
                         </fieldset>
-            
+                        <hr>
                         <fieldset>
                           <label for="altura">Altura:</label>
                           <input type="text" name="altura" required />
                         </fieldset>
-
+                        <hr>
                         <fieldset>
                           <label for="peso">Peso:</label>
                           <input type="text" name="peso" required />
                         </fieldset>
-
+                        <hr>
                         <fieldset>
                           <label for="agressivo">O monstro é agressivo?</label>
-                          <input name="agressivo" type="checkbox" value="false" onchange="this.value=this.checked">
+                          <label class="toggle-check">
+                            <input type="checkbox" class="toggle-check-input" name="agressivo" value="false" onchange="this.value=this.checked" />
+                            <span class="toggle-check-text"></span>
+                          </label>
                         </fieldset>
-            
+                        <hr>
                         <fieldset>
                           <label for="sexo">Sexo:</label>
                           <input type="text" name="sexo" required />
                         </fieldset>  
-            
+                        <hr>
                         <fieldset>
                           <label for="raca">Raça:</label>
                           <input type="text" name="raca" required />
                         </fieldset>
-
+                        <hr>
                         <fieldset>
                           <label for="pesquisador">Pesquisador:</label>
                           <input type="text" name="pesquisador" required />
                         </fieldset>
-
+                        <hr>
             
                         <fieldset>
                           <label for="imagem">Imagem:</label>
@@ -82,8 +90,9 @@
                       </fieldset>
 
                       <fieldset id="fieldSecundario">
+                        <legend>Descrição do Monstro!</legend>
                         <fieldset>
-                          <label for="descricao">Descrição:</label>
+
                           <textarea
                               name="descricao"
                               class="cade"
@@ -95,9 +104,9 @@
                       </fieldset>
 
                       <fieldset id="fieldTerceario">
-
+                        <legend>Características do Monstro!</legend>
+                        
                         <fieldset>
-                          <label for="caracteristica">Característica:</label>
                           <textarea
                           name="caracteristica"
                           class="cade"
@@ -117,6 +126,7 @@
             </section>
         </div>
     </main>
+    
 
     <%- include('./partials/footer.ejs') %>
 </body>

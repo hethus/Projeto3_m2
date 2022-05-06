@@ -1,11 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap');
 
+:root {
+    --area: rgb(255, 255, 255);
+    --fundo: url('/img/white_fundo.png');
+    --cabecalho: rgb(222, 222, 222);
+    --texto_cabecalho: rgb(90, 18, 116);
+    --ccc: #ccc;
+    --rgb: rgb(238, 237, 237);
+    --fff: #f1f1f1;
+    --ddd: #ddd;
+}
+
+.night-mode:root{
+    --area: rgb(233, 231, 231);
+    --fundo: url('/img/black_fundo.png');
+    --cabecalho: rgb(67, 67, 67);
+    --texto_cabecalho: #008cbe;
+    --ccc: rgb(158, 158, 158);
+    --rgb: rgb(216, 216, 216);
+    --fff: #d1d0d0;
+    --ddd: rgb(179, 178, 178);
+}
+
 * {
     padding: 0px;
     margin: 0px;
     box-sizing: content-box;
     font-size: 14px;
     font-family: 'Sora', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    background-image: var(--fundo);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 h1 {
@@ -23,7 +54,7 @@ header {
     display: flex;
     justify-content: space-between;
     height: 10%;
-    background-color: #f2f2f2;
+    background-color: var(--cabecalho);
     align-items: center;
     padding: 0 10px;
 }
@@ -49,6 +80,7 @@ header ul a {
 header ul a li {
     font-size: 20px;
     padding: 20px 0;
+    color: var(--texto_cabecalho);
 }
 
 header a:hover {
@@ -58,6 +90,58 @@ header a:hover {
 header a img#logo {
     height: 100%;
     padding: 0 20px 0 0;
+}
+
+.toggle-check-input_dark_mode {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+}
+
+  .toggle-check-text_dark_mode {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    background: rgb(167, 167, 167);
+    padding: 0.25em 0.5em 0.25em 2em;
+    border-radius: 1em;
+    min-width: 2em;
+    color: #FFF;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+  
+.toggle-check-text_dark_mode:after {
+    content: ' ';
+    display: block;
+    background: #FFF;
+    width: 1.1em;
+    height: 1.1em;
+    border-radius: 1em;
+    position: absolute;
+    left: 0.3em;
+    top: 0.25em;
+    transition: left 0.15s, margin-left 0.15s;
+}
+  
+.toggle-check-text_dark_mode:before {
+    content: 'Claro';
+}
+  
+.toggle-check-input_dark_mode:checked ~ .toggle-check-text_dark_mode {
+    background: #1f1f1f;
+    padding-left: 0.5em;
+    padding-right: 2em;
+    border: 1px solid #757575;
+}
+  
+.toggle-check-input_dark_mode:checked ~ .toggle-check-text_dark_mode:before {
+    content: 'Escuro';
+}
+  
+.toggle-check-input_dark_mode:checked ~ .toggle-check-text_dark_mode:after {
+    left: 100%;
+    margin-left: -1.4em;
 }
 
 body {
@@ -71,13 +155,60 @@ main {
     padding: 30px;
 }
 
-div#teste {
+div#apresentacao {
     min-height: 100%;
-    background-color: #906faf79;
+    background-color: #906faf8d;
     padding: 40px 40px 70px 40px;
     margin: 50px;
     border-radius: 100px;
-    
+    width: 60%;
+    margin: 0 auto;
+}
+
+div#apresentacao p {
+    background-color: var(--ddd);
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 16px;
+    text-indent: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div#apresentacao p span {
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 16px;
+    text-indent: 20px;
+}
+
+div#apresentacao p#final {
+    font-size: 15px;
+    font-weight: bold;
+    width: 45%;
+    margin: 0 53%;
+    text-indent: 0;
+}
+
+h1#titulo {
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--texto_cabecalho);
+    margin-bottom: 30px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--ddd);
+    padding: 10px;
+    border-radius: 15px;
+    width: 60%;
+}
+
+div#teste {
+    min-height: 100%;
+    background-color: #906faf8d;
+    padding: 40px 40px 70px 40px;
+    margin: 50px;
+    border-radius: 100px;
 }
 
 section#monster {
@@ -125,6 +256,7 @@ div.nome_monstro {
     text-overflow: ellipsis;
     font-size: 16px;
     font-weight: bold;
+    text-align: center;
 }
 
 td.verificacao{
@@ -315,8 +447,30 @@ article.card a {
     text-decoration: none;
 }
 
+section#atributos {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    
+}
+
+div.link {
+    margin: 2px;
+}
+
+article.card a {
+    background-color: #ddd;
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid #000;
+}
+
 article.card a:hover{
-    color: #800000;
+    background-color: #000000;
+    color: rgb(255, 255, 255);
 }
 
 section.container {
@@ -341,8 +495,8 @@ section.container div#img img {
 
 .tab {
     overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #f1f1f1;
+    border: 1px solid var(--ccc);
+    background-color: var(--fff);
 }
 
 .tab button {
@@ -356,19 +510,19 @@ section.container div#img img {
 }
 
 .tab button:hover {
-    background-color: #ddd;
+    background-color: var(--ddd);
 }
 
 .tab button.active {
-    background-color: #ccc;
+    background-color: var(--ccc);
 }
 
 .tabcontent {
     display: none;
     padding: 6px 12px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--ccc);
     border-top: none;
-    background-color: rgb(238, 237, 237);
+    background-color: var(--rgb);
 }
 
 .tabcontent p {
@@ -474,9 +628,8 @@ table.tabela_index {
 section.cadastro {
     max-width: 1200px;
     min-width: 200px;
-    border: 1px solid rgb(20, 12, 12);
     margin: 0 auto;
-    background-color: #dddddd;
+    background-color: rgb(204, 204, 204);
 }
 
 form {
@@ -485,48 +638,152 @@ form {
     "fieldPrimario fieldSecundario fieldTerceario"
     "fieldQuarteario fieldQuarteario fieldQuarteario";
     grid-auto-columns: 1fr 3fr 3fr;
+    gap: 0.5%;  
 }
 
 #fieldPrimario {
     max-width: 150px;
-    height: 460px;
+    height: 475px;
     grid-area: "fieldPrimario";
     grid-row-gap: 10px;
-
+    margin-bottom: 10px;
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px;
 }
 
 #fieldSecundario {
     max-width: 505px;
     min-width: 187px;
-    height: 460px;
+    height: 475px;
     grid-area: "fieldSecundario";
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px;
 }
 
 #fieldTerceario {
     max-width: 505px;
     min-width: 187px;
-    height: 460px;
+    height: 475px;
     grid: "fieldTerceario";
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px;
 }
 
 #fieldQuarteario{
     width: auto;
     grid: "fieldQuarteario";
     grid-column: fieldQuarteario;
+    background-color: rgb(204, 204, 204);
+    border-radius: 10px;
 }
+
+form {
+    background-color: #a07fc17e;
+    border: 0;
+}
+
+form legend {
+    background-color: rgb(204, 204, 204);
+    border: 1px solid rgb(20, 12, 12);
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
 
 .botaoCadastro {
     border-radius: 5px;
+    margin-left: 10%;
+    padding: 5px 0 5px 0;
+    width: 80%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: #8ad869;
 }
 
 .botaoCadastro:hover {
-    background-color: #ddd;
+    background-color: #75b659;
 }
 
 .cade {
     resize: none;
-    width: 100%;
-    height: 420px;
+    width: 99%;
+    height: 424px;
+    background-color: var(--area);
+}
+
+input {
+    background-color: var(--area);
+}
+
+select {
+    background-color: var(--area);
+    border-radius: 5px;
+}
+
+.toggle-check-input {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+}
+  
+.toggle-check-text {
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    background: rgb(167, 167, 167);
+    padding: 0.25em 0.5em 0.25em 2em;
+    border-radius: 1em;
+    min-width: 2em;
+    color: #FFF;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+  
+.toggle-check-text:after {
+    content: ' ';
+    display: block;
+    background: #FFF;
+    width: 1.1em;
+    height: 1.1em;
+    border-radius: 1em;
+    position: absolute;
+    left: 0.3em;
+    top: 0.25em;
+    transition: left 0.15s, margin-left 0.15s;
+}
+  
+.toggle-check-text:before {
+    content: 'Não';
+}
+  
+.toggle-check-input:checked ~ .toggle-check-text {
+    background: #8ad869;
+    padding-left: 0.5em;
+    padding-right: 2em;
+}
+  
+.toggle-check-input:checked ~ .toggle-check-text:before {
+    content: 'Sim';
+}
+  
+.toggle-check-input:checked ~ .toggle-check-text:after {
+    left: 100%;
+    margin-left: -1.4em;
+}
+  
+
+form fieldset fieldset {
+    border: none;
+}
+
+form fieldset hr {
+    border: none;
+    border-top: 2px dashed red;
+    margin-top: 2px;
+    width: 120px;
+    height: 0px;
+    margin-left: 30px;
 }
 
 
@@ -540,12 +797,43 @@ form {
         "fieldQuarteario";
         grid-auto-columns: 1fr 3fr 3fr;
     }
+
+    #fieldSecundario {
+        margin-bottom: 10px;
+    }
 }
 
 footer {
-    display: flex;
     height: 10%;
-    background-color: #f2f2f2;
+    background-color: var(--cabecalho);
+    display: flex;
+    justify-content: center;
     align-items: center;
-    padding: 0 10px;
+    padding: 30px 15px;
+}
+  
+footer div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    font-size: 20px;
+}
+
+footer p {
+    text-align: center;
+    font-size: 20px;
+    color: var(--texto_cabecalho);
+}
+  
+footer p a {
+    text-decoration: none;
+    color: rgb(115, 180, 4);
+    font-weight: bold;
+    font-size: 22px;
+}
+  
+footer p a:hover {
+    color: rgb(86, 136, 1);
 }

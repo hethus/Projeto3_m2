@@ -23,4 +23,3 @@ export const getDetalhes = async (req, res) => {
 export const getCadastro = (req, res) => {
     res.render('cadastro');
 }
-

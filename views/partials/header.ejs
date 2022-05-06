@@ -1,5 +1,5 @@
 <header>
-    <a href="/"><img id="logo" src="/img/white_new.png" alt="logo Monstruario"></a>
+    <a href="/"><img id="logo" src="" alt="logo Monstruario"></a>
     <nav>
         <ul>
             
@@ -7,8 +7,9 @@
             <a href="/cadastro"><li>Cadastro</li></a>
 
             <li>
-                <label for="switch">
-                    <input type="checkbox" id="switch"> Dark Mode
+                <label class="toggle-check" for="switch">
+                    <input type="checkbox" class="toggle-check-input_dark_mode" id="switch"/>
+                    <span class="toggle-check-text_dark_mode"></span>
                 </label>
             </li>
         </ul>
@@ -21,7 +22,10 @@
 
     if (nightModeStorage) {
         document.documentElement.classList.add('night-mode');
+        document.getElementById("logo").src="/img/black_new.png";
         nightMode.checked = true;
+    } else {
+        document.getElementById("logo").src="/img/white_new.png";
     };
 
 
@@ -30,8 +34,10 @@
 
     if (document.documentElement.classList.contains('night-mode')) {
         localStorage.setItem('gmtNightMode', true)
+        document.getElementById("logo").src="/img/black_new.png";
         return
     }
     localStorage.removeItem('gmtNightMode')
+    document.getElementById("logo").src="/img/white_new.png";  
     });
 </script>
