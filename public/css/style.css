@@ -473,8 +473,73 @@ table.tabela_index {
 
 section.cadastro {
     max-width: 1200px;
+    min-width: 200px;
     border: 1px solid rgb(20, 12, 12);
     margin: 0 auto;
+    background-color: #dddddd;
+}
+
+form {
+    display: grid;
+    grid-template-areas:
+    "fieldPrimario fieldSecundario fieldTerceario"
+    "fieldQuarteario fieldQuarteario fieldQuarteario";
+    grid-auto-columns: 1fr 3fr 3fr;
+}
+
+#fieldPrimario {
+    max-width: 150px;
+    height: 460px;
+    grid-area: "fieldPrimario";
+    grid-row-gap: 10px;
+
+}
+
+#fieldSecundario {
+    max-width: 505px;
+    min-width: 187px;
+    height: 460px;
+    grid-area: "fieldSecundario";
+}
+
+#fieldTerceario {
+    max-width: 505px;
+    min-width: 187px;
+    height: 460px;
+    grid: "fieldTerceario";
+}
+
+#fieldQuarteario{
+    width: auto;
+    grid: "fieldQuarteario";
+    grid-column: fieldQuarteario;
+}
+
+.botaoCadastro {
+    border-radius: 5px;
+}
+
+.botaoCadastro:hover {
+    background-color: #ddd;
+}
+
+.cade {
+    resize: none;
+    width: 100%;
+    height: 420px;
+}
+
+
+@media(max-width: 805px){
+    form {
+        display: grid;
+        grid-template-areas:
+        "fieldPrimario"
+        "fieldSecundario"
+        "fieldTerceario"
+        "fieldQuarteario";
+        grid-auto-columns: 1fr 3fr 3fr;
+    }
 }
 
 footer {

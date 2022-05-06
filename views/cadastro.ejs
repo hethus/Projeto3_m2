@@ -14,7 +14,106 @@
     <main>
         <div id="teste">
             <section class="cadastro">
-                
+                <section id="formulario">
+                    <form method="post" action="/cadastro">
+                      <fieldset id="fieldPrimario">
+                        <legend>Cadastro de Monstros!</legend>
+                        
+                        <fieldset>
+                          <label for="nome">Nome:</label>
+                          <input type="text" name="nome" required />
+                        </fieldset>
+            
+                        <fieldset>
+                          <label for="idade">Idade:</label>
+                          <input type="text" name="idade" required />
+                        </fieldset>
+            
+                        <fieldset>
+                          <label for="desastre">Nível de desastre:</label>
+                          <select name="desastre" required>
+                            <option value="">Selecionar</option>
+                            <option value="1">Fraco</option>
+                            <option value="2">Mediano</option>
+                            <option value="3">Forte</option>
+                            <option value="4">Muito Forte</option>
+                            <option value="5">Ameaça</option>
+                            <option value="6">Cataclisma</option>
+                          </select>
+                        </fieldset>
+            
+                        <fieldset>
+                          <label for="altura">Altura:</label>
+                          <input type="text" name="altura" required />
+                        </fieldset>
+
+                        <fieldset>
+                          <label for="peso">Peso:</label>
+                          <input type="text" name="peso" required />
+                        </fieldset>
+
+                        <fieldset>
+                          <label for="agressivo">O monstro é agressivo?</label>
+                          <input name="agressivo" type="checkbox" value="false" onchange="this.value=this.checked">
+                        </fieldset>
+            
+                        <fieldset>
+                          <label for="sexo">Sexo:</label>
+                          <input type="text" name="sexo" required />
+                        </fieldset>  
+            
+                        <fieldset>
+                          <label for="raca">Raça:</label>
+                          <input type="text" name="raca" required />
+                        </fieldset>
+
+                        <fieldset>
+                          <label for="pesquisador">Pesquisador:</label>
+                          <input type="text" name="pesquisador" required />
+                        </fieldset>
+
+            
+                        <fieldset>
+                          <label for="imagem">Imagem:</label>
+                          <input type="url" name="imagem" required />
+                        </fieldset>
+            
+                        
+                      </fieldset>
+
+                      <fieldset id="fieldSecundario">
+                        <fieldset>
+                          <label for="descricao">Descrição:</label>
+                          <textarea
+                              name="descricao"
+                              class="cade"
+                              cols="50"
+                              rows="5"
+                              required
+                          ></textarea>
+                        </fieldset>
+                      </fieldset>
+
+                      <fieldset id="fieldTerceario">
+
+                        <fieldset>
+                          <label for="caracteristica">Característica:</label>
+                          <textarea
+                          name="caracteristica"
+                          class="cade"
+                          cols="20"
+                          rows="5"
+                          required
+                          ></textarea>
+                        </fieldset>
+                        
+                      </fieldset>
+
+                      <fieldset id="fieldQuarteario">
+                        <button type="submit" class="botaoCadastro">Enviar</button>
+                      </fieldset>
+                    </form>
+                  </section>
             </section>
         </div>
     </main>

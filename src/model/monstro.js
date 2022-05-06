@@ -13,7 +13,7 @@ export const monstro = connection.define('registro', {
         allowNull: false
     },
     idade: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false
     },
 	desastre: {
