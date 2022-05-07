@@ -73,7 +73,9 @@ export const getById = async (req, res) => {
             res.render("index", {
                 monstruario,
                 monstroPut: null,
-                monstroDel: monstroNovo
+                monstroDel: monstroNovo,
+                message,
+                type
             });
         }
     } catch (error){
