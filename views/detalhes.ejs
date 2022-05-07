@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="icon" href="/img/icon.ico"/>
     <title>Detalhes <%= deMonstro.nome %></title>
 </head>
@@ -90,9 +91,9 @@
 
                       <tr>
                         <td>Agressivo? </td>
-                        <% if (deMonstro.agressivo == false) { %>
+                        <% if (deMonstro.agressivo == 1) { %>
                           <td> Não </td>
-                        <% } else if (deMonstro.agressivo == true) { %>
+                        <% } else if (deMonstro.agressivo == 2) { %>
                             <td> Sim </td>
                         <% } %>
                       </tr>

@@ -203,6 +203,20 @@ h1#titulo {
     width: 60%;
 }
 
+h2.titulo {
+    font-size: 2vw;
+    font-weight: bold;
+    color: var(--texto_cabecalho);
+    margin-bottom: 30px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--ddd);
+    padding: 10px;
+    border-radius: 15px;
+    width: 60%;
+    word-wrap: break-word;
+}
+
 div#teste {
     min-height: 100%;
     background-color: #906faf8d;
@@ -699,6 +713,8 @@ form legend {
     margin-top: 5px;
     margin-bottom: 5px;
     background-color: #8ad869;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .botaoCadastro:hover {
@@ -803,6 +819,69 @@ form fieldset hr {
     }
 }
 
+div#teste_modal {
+    min-height: 100%;
+}
+
+.modal-overlay {
+    background-color: #00000050;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+.modal {
+    margin: 1rem;
+    width: 100%;
+    max-width: 900px;
+    height: 85%;
+    min-height: 300px;
+    background-color: rgb(149, 129, 170);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(149, 129, 170);
+    padding: 1rem;
+}
+
+.modal-header a#close-modal-put {
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.modal-body {
+    padding: .5rem 1rem;
+}
+
+.scroll::-webkit-scrollbar {
+    width: 12px;
+}
+
+.scroll::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    border-radius: 10px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
 footer {
     height: 10%;
     background-color: var(--cabecalho);
@@ -836,4 +915,85 @@ footer p a {
   
 footer p a:hover {
     color: rgb(86, 136, 1);
+}
+
+.modal-body-delete{
+    font-size: 2vw;
+    font-weight: bold;
+    color: var(--texto_cabecalho);
+    margin-top: 10px;
+    margin-bottom: 30px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--ddd);
+    border-radius: 15px;
+    width: 90%;
+    height: 20%;
+    word-wrap: break-word;
+    padding-top: 30px;
+}
+
+.modal_delete {
+    margin: 1rem;
+    width: 40%;
+    max-width: 900px;
+    height: 35%;
+    min-height: 100px;
+    background-color: rgb(149, 129, 170);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.modal-body-delete p{
+    font-size: 2vw;
+}
+
+#botao-Delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.modal-body-delete a{
+    font-size: 2vw;
+    text-decoration: none;
+    padding: 3px;
+    margin: 10px;
+    border-radius: 5px;
+}
+
+a#no{
+    background-color: #31ab1b;
+    color: #FFF;
+    border: 2px solid #1d6610;
+    transition: all .3s ease-in-out;
+}
+
+a#yes{
+    background-color: #800000;
+    color: #FFF;
+    border: 2px solid #410000;
+    transition: all .3s ease-in-out;
+}
+
+a#no:hover{
+    background-color: #1d6610;
+    color: #FFF;
+    border: 2px solid #31ab1b;
+    transition: all .3s ease-in-out;
+}
+
+a#yes:hover{
+    background-color: #410000;
+    color: #FFF;
+    border: 2px solid #a40000;
+    transition: all .3s ease-in-out;
+}
+
+.bi {
+    font-size: 3vw;
 }

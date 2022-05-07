@@ -29,7 +29,7 @@ export const monstro = connection.define('registro', {
         allowNull: false
     },
 	agressivo: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.INTEGER,
         allowNull: false
     },
 	sexo: {
