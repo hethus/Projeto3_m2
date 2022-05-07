@@ -12,6 +12,9 @@
 <body>
     <%- include('./partials/header.ejs') %>
 
+    <% if(message != "") {%> 
+        <%- include('./partials/alerts.ejs') %>
+    <% } %> 
     <main>
 
         <div id="apresentacao">
@@ -169,6 +172,23 @@
         this.classList.toggle("virar");
     }
     cards.forEach((card) => card.addEventListener("click", flipCard));
+
+
+
+    const closeAlert = () => {
+    const close = document.querySelector("#close-message");
+    const message = document.querySelector(".message");
+
+    close.addEventListener("click", () => {
+        message.style.display = "none";
+    });
+
+    setTimeout(() => {
+        message.style.display = "none";
+    }, 5000);
+};
+
+closeAlert();
 
 </script>
 </html>

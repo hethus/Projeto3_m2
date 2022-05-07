@@ -1,10 +1,18 @@
 import { connection } from '../database/connection.js';
 import { monstro } from '../model/monstro.js';
 
+let message = "";
+let type = "";
+
 export const getIndex = async (req, res) => {
+    setTimeout(() => {
+        message = "";
+        type = "";
+    }, 1000);
+
     try {
-        const monstruario = await monstro.findAll();
-        res.render('index', { monstruario, monstroPut: null, monstroDel: null});
+        const monstruario = await monstro.findAll({order: [["id", "ASC"]]});
+        res.render('index', { monstruario, monstroPut: null, monstroDel: null, message, type});
     } catch (error){
         res.send(error.message); 
     }
@@ -22,7 +30,7 @@ export const getDetalhes = async (req, res) => {
 
 export const getCadastro = (req, res) => {
     try {
-    res.render('cadastro');
+    res.render('cadastro', { message, type });
     } catch (error){
         res.send(error.message); 
     }
@@ -33,10 +41,14 @@ export const postCadastro = async (req, res) => {
         const monstroNovo = req.body;
 
         if(!monstroNovo){
+            message = "Preencha todos os campos!"
+            type = "danger";
             return res.redirect('/cadastro');
         }
 
         await monstro.create(monstroNovo);
+        message = "Monstro cadastrado com sucesso!"
+        type = "success";
         res.redirect('/');
     } catch (error){
         res.send(error.message); 
@@ -46,14 +58,16 @@ export const postCadastro = async (req, res) => {
 export const getById = async (req, res) => {
     try {
         const method = req.params.method;
-        const monstruario = await monstro.findAll();
+        const monstruario = await monstro.findAll({order: [["id", "ASC"]]});
         const monstroNovo = await monstro.findByPk(req.params.id);
 
         if(method == 'put'){
             res.render("index", {
                 monstruario,
                 monstroPut: monstroNovo,
-                monstroDel: null
+                monstroDel: null,
+                message,
+                type 
             });
         } else{
             res.render("index", {
@@ -71,6 +85,8 @@ export const update = async (req, res) => {
     try {
         const monstroNovo = req.body;
         await monstro.update(monstroNovo, {where: {id: req.params.id}});
+        message = "Monstro atualizado com sucesso!"
+        type = "success";
         res.redirect('/');
     } catch (error){
         res.send(error.message); 
@@ -83,7 +99,10 @@ export const getDeletar = async (req, res) => {
             where: {
                 id: req.params.id
             }
+            
         })
+        message = "Monstro excluído com sucesso!"
+        type = "success";
         res.redirect('/')
     }
     catch(error){

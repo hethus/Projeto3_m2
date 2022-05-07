@@ -14,6 +14,9 @@
 
     <main>
         <div id="teste">
+          <% if(message != "") {%> 
+            <%- include('./partials/alerts.ejs') %>
+          <% } %> 
             <h2 class="titulo">Cadastro do monstro:</h2>
             <br>
             <section class="cadastro">
@@ -133,4 +136,21 @@
 
     <%- include('./partials/footer.ejs') %>
 </body>
+
+<script>
+  const closeAlert = () => {
+    const close = document.querySelector("#close-message");
+    const message = document.querySelector("#message");
+
+    close.addEventListener("click", () => {
+        message.style.display = "none";
+    });
+
+    setTimeout(() => {
+        message.style.display = "none";
+    }, 5000);
+};
+
+closeAlert();
+</script>
 </html>
