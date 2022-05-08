@@ -1,7 +1,7 @@
 <section class="modal-overlay" id="overlay">
     <div class="modal scroll" id="modal">
         <div class="modal-header">
-            <h2 class="titulo">Atualizar monstro</h2>
+            <h2 class="titulo">Atualizar <%= monstroPut.nome.trimRight() %></h2>
             <a href="/" id="close-modal-put"><i class="bi bi-x"></i></a>
         </div>
         <div class="modal-body">
@@ -16,13 +16,13 @@
 
                         <fieldset>
                           <label for="nome">Nome:</label>
-                          <input type="text" name="nome" required value="<%= monstroPut.nome %>"/>
+                          <input type="text" name="nome" required value="<%= monstroPut.nome.trimRight() %>"/>
                         </fieldset>
                         <hr>
                         
                         <fieldset>
                           <label for="idade">Idade:</label>
-                          <input type="text" name="idade" required value="<%= monstroPut.idade %>"/>
+                          <input type="text" name="idade" required value="<%= monstroPut.idade.trimRight() %>"/>
                         </fieldset>
                         
                         <hr>
@@ -42,12 +42,12 @@
                         <hr>
                         <fieldset>
                           <label for="altura">Altura:</label>
-                          <input type="text" name="altura" required value="<%= monstroPut.altura %>"/>
+                          <input type="text" name="altura" required value="<%= monstroPut.altura.trimRight() %>"/>
                         </fieldset>
                         <hr>
                         <fieldset>
                           <label for="peso">Peso:</label>
-                          <input type="text" name="peso" required value="<%= monstroPut.peso %>"/>
+                          <input type="text" name="peso" required value="<%= monstroPut.peso.trimRight() %>"/>
                         </fieldset>
                         <hr>
                         <fieldset>
@@ -62,23 +62,23 @@
                         <hr>
                         <fieldset>
                           <label for="sexo">Sexo:</label>
-                          <input type="text" name="sexo" required value="<%= monstroPut.sexo %>"/>
+                          <input type="text" name="sexo" required value="<%= monstroPut.sexo.trimRight() %>"/>
                         </fieldset>  
                         <hr>
                         <fieldset>
                           <label for="raca">Raça:</label>
-                          <input type="text" name="raca" required value="<%= monstroPut.raca %>"/>
+                          <input type="text" name="raca" required value="<%= monstroPut.raca.trimRight() %>"/>
                         </fieldset>
                         <hr>
                         <fieldset>
                           <label for="pesquisador">Pesquisador:</label>
-                          <input type="text" name="pesquisador" required value="<%= monstroPut.pesquisador %>"/>
+                          <input type="text" name="pesquisador" required value="<%= monstroPut.pesquisador.trimRight() %>"/>
                         </fieldset>
                         <hr>
             
                         <fieldset>
                           <label for="imagem">Imagem:</label>
-                          <input type="url" name="imagem" required value="<%= monstroPut.imagem %>"/>
+                          <input type="url" name="imagem" required value="<%= monstroPut.imagem.trimRight() %>"/>
                         </fieldset>
             
                         
@@ -94,7 +94,7 @@
                               cols="50"
                               rows="5"
                               required
-                          ><%= monstroPut.descricao %></textarea>
+                          ><%= monstroPut.descricao.trimRight() %></textarea>
                         </fieldset>
                       </fieldset>
 
@@ -108,7 +108,7 @@
                           cols="20"
                           rows="5"
                           required
-                          ><%= monstroPut.caracteristica %></textarea>
+                          ><%= monstroPut.caracteristica.trimRight() %></textarea>
                         </fieldset>
                         
                       </fieldset>

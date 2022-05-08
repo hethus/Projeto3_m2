@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="icon" href="/img/icon.ico"/>
-    <title>Detalhes <%= deMonstro.nome %></title>
+    <title>Detalhes <%= deMonstro.nome.trimRight() %></title>
 </head>
 <body>
     <%- include('./partials/header.ejs') %>
@@ -25,13 +25,13 @@
 
                 <div id="Descricao" class="tabcontent">
                     <h3>Descrição: </h3>
-                    <p><%= deMonstro.descricao %></p>
+                    <p><%= deMonstro.descricao.trimRight() %></p>
 
                 </div>
 
                 <div id="Caracteristicas" class="tabcontent">
                     <h3>Características: </h3>
-                    <p><%= deMonstro.caracteristica %></p>
+                    <p><%= deMonstro.caracteristica.trimRight() %></p>
                 </div>
             </div>
 
@@ -49,11 +49,11 @@
                 <div id="side" class="si_cataclisma">
             <% } %>
                 <div id="name">
-                    <h1><%= deMonstro.nome %></h1>
+                    <h1><%= deMonstro.nome.trimRight() %></h1>
                 </div>
     
                 <div id="img">
-                  <img src="<%= deMonstro.imagem %>" alt="Imagem do monstro <%= deMonstro.nome %>" />
+                  <img src="<%= deMonstro.imagem.trimRight() %>" alt="Imagem do monstro <%= deMonstro.nome.trimRight() %>" />
                 </div>
         
                 <table>
@@ -64,12 +64,12 @@
                     <tbody>
                         <tr>
                             <td>Sexo:</td>
-                            <td><%= deMonstro.sexo %></td>
+                            <td><%= deMonstro.sexo.trimRight() %></td>
                         </tr>
 
                       <tr>
                         <td>Raça:</td>
-                        <td><%= deMonstro.raca %></td>
+                        <td><%= deMonstro.raca.trimRight() %></td>
                       </tr>
                       
                       <tr>
@@ -100,22 +100,22 @@
         
                       <tr>
                         <td>Idade:</td>
-                        <td><%= deMonstro.idade %></td>
+                        <td><%= deMonstro.idade.trimRight() %></td>
                       </tr>
         
                       <tr>
-                        <td>Altura (em m):</td>
-                        <td><%= deMonstro.altura %></td>
+                        <td>Altura:</td>
+                        <td><%= deMonstro.altura.trimRight() %></td>
                       </tr>
         
                       <tr>
-                        <td>Peso (kg):</td>
-                        <td><%= deMonstro.peso %></td>
+                        <td>Peso:</td>
+                        <td><%= deMonstro.peso.trimRight() %></td>
                       </tr>
 
                       <tr>
                         <td>Registrado por:</td>
-                        <td><%= deMonstro.pesquisador %></td>
+                        <td><%= deMonstro.pesquisador.trimRight() %></td>
                       </tr>
                     </tbody>
                   </tr>

@@ -28,7 +28,7 @@ export const getIndex = async (req, res) => {
         }
 
         if(column === 'id') {
-            message = "Bem-vindo(a) Pesquisador(a) ao MONSTRUARIO! Conectado ao servidor com sucesso!";
+            message = "Bem-vindo(a) Pesquisador(a) ao MONSTRUARIO! \r\n\r\n Conectado ao servidor com sucesso!";
             type = "success";
         }
 

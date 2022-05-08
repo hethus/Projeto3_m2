@@ -126,6 +126,15 @@
                       </fieldset>
 
                       <fieldset id="fieldQuarteario">
+                        <div id="envia">
+                          <p>Você assina que todos os dados fornecidos são verdadeiros?</p>
+                          <label class="toggle-check">
+                            <input type="checkbox" class="toggle-check-input" required oninvalid="this.setCustomValidity('É obrigatório que todas as informações sejam verdadeiras!')"
+                            oninput="this.setCustomValidity('')"/>
+                            <span class="toggle-check-text"></span>
+                          </label>
+                        </div>
+                        
                         <button type="submit" class="botaoCadastro">Enviar</button>
                       </fieldset>
                     </form>

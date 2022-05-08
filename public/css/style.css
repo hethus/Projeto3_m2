@@ -5,6 +5,11 @@
     src: url('../font/Lovelo-LineBold.ttf');
 }
 
+@font-face {
+    font-family: 'cookie';
+    src: url('../font/Cookie-Regular.ttf');
+}
+
 :root {
     --area: rgb(255, 255, 255);
     --fundo: url('/img/white_fundo.png');
@@ -296,7 +301,6 @@ article.card div.back_detalhes {
 article.card {
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    /* */
 }
 
 div.nome_monstro {
@@ -343,7 +347,6 @@ article.front {
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical; 
-    /* */
 }
 
 article.back {
@@ -358,20 +361,17 @@ article.back {
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    /* */
 }
 
 article.flip {
     -webkit-transition: transform 0.6s;
     transition: transform 0.6s;
     transform-style: preserve-3d;
-    /* */
 }
 
 .flip.virar {
     transform: rotateY(180deg);
     -webkit-transform: rotateY(180deg);
-    /* */
 }
 
 .flip#fraco {
@@ -726,6 +726,13 @@ form {
     border-radius: 10px;
 }
 
+#envia{
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+}
+
 #fieldQuarteario{
     width: auto;
     grid: "fieldQuarteario";
@@ -823,7 +830,8 @@ select {
 }
   
 .toggle-check-input:checked ~ .toggle-check-text:before {
-    content: 'Sim';
+    white-space:pre;
+    content: 'Sim   ';
 }
   
 .toggle-check-input:checked ~ .toggle-check-text:after {
@@ -1083,6 +1091,10 @@ a#yes:hover{
     font-size: 1.7rem;
 }
 
+.message p {
+    white-space: pre-wrap;
+}
+
 .select-css {
     cursor: pointer;
 	display: block;
@@ -1252,4 +1264,21 @@ option:hover {
 textarea {
     padding: 5px;
     white-space: pre-wrap;
+}
+
+.pesq {
+    font-family: 'cookie', sans-serif;
+    font-size: 2.2rem;
+}
+
+hr#ass {
+    width: 170px;
+    border: 1px solid black;
+    background-color: #000;
+    margin-top: -15px;
+}
+
+#a {
+    font-family: 'Sora', sans-serif;
+    width: auto;
 }

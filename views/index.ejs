@@ -103,18 +103,20 @@
                     <article class="flip" id="cataclisma">
                 <% } %>
                     <article class="card front">
-                        <div class="nome_monstro"> <%= monstro.nome %> </div>
+                        <div class="nome_monstro"> <%= monstro.nome.trimRight() %> </div>
                         <hr>
-                        <div class="img_monstro"> <img src="<%= monstro.imagem %>" alt="Imagem do monstro <%= monstro.nome %> ">  </div>
+                        <div class="img_monstro"> <img src="<%= monstro.imagem.trimRight() %>" alt="Imagem do monstro <%= monstro.nome.trimRight() %> ">  </div>
                         <hr>
                         <div class="tipo_monstro"> 
-                            <div class="verificacao"><%= monstro.raca %></div>
-                            <div class="verificacao"><%= monstro.pesquisador %></div> 
+                            <div class="verificacao"><%= monstro.raca.trimRight() %></div>
+                            
+                            <div class="verificacao pesq"><span id="a">a. </span><%= monstro.pesquisador.trimRight() %></div>
+                            <hr id="ass">
                         </div>
                     </article>
 
                     <article class="card back">
-                        <div class="nome_monstro"> <%= monstro.nome %> </div>
+                        <div class="nome_monstro"> <%= monstro.nome.trimRight() %> </div>
                         <hr>
                         <div class="back_detalhes">
                             <table class="tabela_index">
@@ -125,12 +127,12 @@
                                   <tbody>
                                       <tr>
                                           <td>Sexo:</td>
-                                          <td class="verificacao"><%= monstro.sexo %></td>
+                                          <td class="verificacao"><%= monstro.sexo.trimRight() %></td>
                                       </tr>
               
                                     <tr>
                                       <td>Raça:</td>
-                                      <td class="verificacao"><%= monstro.raca %></td>
+                                      <td class="verificacao"><%= monstro.raca.trimRight() %></td>
                                     </tr>
                                     
                                     <tr>
@@ -161,7 +163,7 @@
                       
                                     <tr>
                                       <td>Idade:</td>
-                                      <td><%= monstro.idade %></td>
+                                      <td><%= monstro.idade.trimRight() %></td>
                                     </tr>
                                   </tbody>
                                 </tr>
