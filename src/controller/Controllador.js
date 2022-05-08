@@ -10,8 +10,28 @@ export const getIndex = async (req, res) => {
         type = "";
     }, 1000);
 
+    const column = req.query['column'] || 'id';
+    const order = req.query['order'] || 'asc';
+    const ver = req.query['ver'] || false;
+    const valor = req.query['valor'] || '';
+    
+    
+
     try {
-        const monstruario = await monstro.findAll({order: [["id", "ASC"]]});
+        let monstruario
+        if (ver) {
+
+            monstruario = await monstro.findAll({where: {[column]: valor}});
+        } else {
+
+            monstruario = await monstro.findAll({order: [[column, order]]});
+        }
+
+        if(column === 'id') {
+            message = "Bem-vindo(a) Pesquisador(a) ao MONSTRUARIO! Conectado ao servidor com sucesso!";
+            type = "success";
+        }
+
         res.render('index', { monstruario, monstroPut: null, monstroDel: null, message, type});
     } catch (error){
         res.send(error.message); 

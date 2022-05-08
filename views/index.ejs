@@ -15,7 +15,7 @@
     <% if(message != "") {%> 
         <%- include('./partials/alerts.ejs') %>
     <% } %>
-    
+
     <main>
 
         <div id="apresentacao">
@@ -27,7 +27,7 @@
                 <br>
                 <br>
                 <span>
-                    Peço que faça um pouco de Role Play e imagine um mundo fictício, onde vivemos no ano de 2022, mas há três anos um abalo sísmico aconteceu.
+                    Peço que faça um pouco de Role-Play e imagine um mundo fictício, onde vivemos no ano de 2022, mas há três anos um abalo sísmico aconteceu.
                 </span>
                 
                 <br>
@@ -38,7 +38,7 @@
                 <br>
                 <br>
                 <span>
-                    As pessoas de todo o mundo se viam indefesas perante a essa invasão estranha, infelizmente não demorou muito para que os monstros começassem a caçar os seres humanos, muitos de nós morreram...
+                    As pessoas de todo o mundo se viam indefesas perante a essa invasão estranha, infelizmente não demorou muito para que os monstros começassem a caçar os seres humanos, muitos morreram...
                 </span>
                 <br>
                 <span>
@@ -56,7 +56,36 @@
 
         <div id="teste">
 
-            <h1 id="titulo">Monstros cadastrados:</h1>
+            <div id="teste_dois">
+                <h1 id="titulo">Monstros cadastrados:</h1>
+
+                <select class="select-css scroll" onchange="document.location.href = '/' + this.value">
+                    <option disabled selected>Ordenar monstros?</option>
+                    <option disabled>Por Nome:</option>
+                    <option value="?order=ASC&column=nome">Nome crescente</option>
+                    <option value="?order=DESC&column=nome">Nome decrescente</option>
+                    <option disabled>Por desastre:</option>
+                    <option value="?order=ASC&column=desastre">Desastre crescente</option>
+                    <option value="?order=DESC&column=desastre">Desastre decrescente</option>
+                    <option value="?ver=true&column=desastre&valor=1">Fracos</option>
+                    <option value="?ver=true&column=desastre&valor=2">Medianos</option>
+                    <option value="?ver=true&column=desastre&valor=3">Fortes</option>
+                    <option value="?ver=true&column=desastre&valor=4">Muito fortes</option>
+                    <option value="?ver=true&column=desastre&valor=5">Ameças</option>
+                    <option value="?ver=true&column=desastre&valor=6">Cataclismáticos</option>
+                    <option disabled>Por pesquisador:</option>
+                    <option value="?order=ASC&column=pesquisador">Pesquisador crescente</option>
+                    <option value="?order=DESC&column=pesquisador">Pesquisador decrescente</option>
+                    <option disabled>Agressivo?</option>
+                    <option value="?ver=true&column=agressivo&valor=2">Sim</option>
+                    <option value="?ver=true&column=agressivo&valor=1">Não</option>
+                    <option disabled>Por raça:</option>
+                    <option value="?order=ASC&column=raca">Raça crescente</option>
+                    <option value="?order=DESC&column=raca">Raça decrescente</option>
+                </select>
+            </div>
+            
+            <hr id="linha">
 
         <section id="monster">
             <% monstruario.forEach(monstro => { %>
@@ -191,5 +220,10 @@
 
 closeAlert();
 
+
+let selectEl = document.getElementsByTagName('select');
+selectEl[0].addEventListener('change', function() {
+    location.href=this.value;
+});
 </script>
 </html>

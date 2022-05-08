@@ -1,8 +1,15 @@
 <header>
     <a href="/"><img id="logo" src="" alt="logo Monstruario"></a>
-    <nav>
+    <h1 id="header">MONSTRUARIO</h1>
+
+
+    <nav id="navegacao">
+        <button id="btn-mobile" aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i></button>
+        
         <ul>
-            
+
+            <h1 id="nav">MONSTRUARIO</h1>
+
             <a href="/"><li>Home</li></a>
             <a href="/cadastro"><li>Cadastro</li></a>
 
@@ -40,4 +47,18 @@
     localStorage.removeItem('gmtNightMode')
     document.getElementById("logo").src="/img/white_new.png";  
     });
+
+    const btnMobile = document.getElementById('btn-mobile');
+
+    function toggleMenu(event) {
+        if (event.type === 'touchstart') event.preventDefault();
+        const nav = document.getElementById('navegacao');
+        const but = document.getElementById('btn-mobile');
+        but.classList.toggle('active');
+        nav.classList.toggle('active');
+        event.currentTarget.setAttribute('aria-expanded', nav.classList.contains('active'));
+    }
+
+    btnMobile.addEventListener('click', toggleMenu);
+    btnMobile.addEventListener('touchstart', toggleMenu);
 </script>

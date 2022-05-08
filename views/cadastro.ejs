@@ -65,10 +65,11 @@
                         <hr>
                         <fieldset>
                           <label for="agressivo">O monstro é agressivo?</label>
-                          <label class="toggle-check">
-                            <input type="checkbox" class="toggle-check-input" name="agressivo" value="0" onchange="this.value = +this.checked" />
-                            <span class="toggle-check-text"></span>
-                          </label>
+                          <select name="agressivo" required>
+                            <option value="">Selecionar</option>
+                            <option value="1">Não</option>
+                            <option value="2">Sim</option>
+                        </select>
                         </fieldset>
                         <hr>
                         <fieldset>
