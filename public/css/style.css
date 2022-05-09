@@ -242,7 +242,7 @@ h1#titulo {
   background-color: var(--ddd);
   padding: 10px;
   border-radius: 15px;
-  width: 60%;
+  width: 40%;
 }
 
 h2.titulo {
@@ -1240,7 +1240,8 @@ hr.oculto {
   }
 
   h1#titulo {
-    font-size: 0.9em;
+    font-size: 1.2em;
+    width: 70%;
   }
 
   .select-css {
@@ -1250,6 +1251,14 @@ hr.oculto {
   div#apresentacao p#final {
     width: 90%;
     margin: 0 0;
+  }
+
+  h2.titulo {
+    font-size: 1.2em;
+  }
+
+  section.cadastro {
+    margin: 0 0 0 -25%;
   }
 
   footer {
