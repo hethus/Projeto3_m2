@@ -59,7 +59,7 @@ export const monstro = connection.define(
 
 const initTable = async () => {
   try {
-      await filmes.sync()
+      await monstro.sync()
   }
   catch(error){
       error.message
