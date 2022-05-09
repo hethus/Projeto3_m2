@@ -1214,7 +1214,7 @@ hr.oculto {
     left: 0;
     background-image: linear-gradient(var(--cabecalho) 50%, var(--cccc));
     z-index: 1000;
-    transition: 0.6s;
+
     height: 0px;
     visibility: hidden;
     overflow-y: hidden;
@@ -1255,10 +1255,11 @@ hr.oculto {
 
   h2.titulo {
     font-size: 1.2em;
+    width: 80%;
   }
 
   section.cadastro {
-    margin: 0 0 0 -25%;
+    margin: 0 0 0 -2.8rem;
   }
 
   footer {
@@ -1276,7 +1277,7 @@ hr.oculto {
   h1#nav {
     display: block;
     font-family: "Lovelo", sans-serif;
-    font-size: 50px;
+    font-size: 45px;
     color: var(--texto_cabecalho_2);
     border-bottom: 2px solid var(--cccc);
     width: 105%;
