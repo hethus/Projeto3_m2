@@ -56,3 +56,14 @@ export const monstro = connection.define(
     timestamp: false,
   }
 );
+
+const initTable = async () => {
+  try {
+      await filmes.sync()
+  }
+  catch(error){
+      error.message
+  }
+}
+
+initTable()
