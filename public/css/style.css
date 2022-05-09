@@ -1167,6 +1167,10 @@ option:hover {
   width: 50%;
 }
 
+hr.oculto {
+  display: none;
+}
+
 @media (max-width: 817px) {
   #btn-mobile {
     display: block;
@@ -1187,13 +1191,28 @@ option:hover {
     transform: rotate(90deg);
   }
 
+  hr.oculto {
+    display: block;
+    border: 1px solid var(--cccc);
+    background-color: var(--cccc);
+    width: 80%;
+  }
+
+  .message{
+    right: -1rem;
+  }
+
+  header {
+    width: 100%;
+  }
+
   header nav ul {
     display: block;
     position: absolute;
     width: 100%;
-    top: 70px;
+    top: 60px;
     left: 0;
-    background-image: linear-gradient(var(--cabecalho) 10%, var(--cccc));
+    background-image: linear-gradient(var(--cabecalho) 50%, var(--cccc));
     z-index: 1000;
     transition: 0.6s;
     height: 0px;
@@ -1207,14 +1226,17 @@ option:hover {
     overflow-y: auto;
   }
 
+  #navecao ul a {
+    margin: 10px 0;
+  }
+
   #navegacao ul a li {
-    border-bottom: 2px solid var(--cccc);
     max-width: 90%;
   }
 
   #navegacao ul li {
-    padding: 1em 0;
-    margin: 0 1rem;
+    padding: 2em 0;
+    margin: .5rem 1rem;
   }
 
   h1#titulo {
@@ -1229,6 +1251,12 @@ option:hover {
     width: 90%;
     margin: 0 0;
   }
+
+  footer {
+    width: 100%;
+    padding: 30px 15px;
+    margin: -10px;
+  }
 }
 
 @media (max-width: 589px) {
@@ -1242,7 +1270,8 @@ option:hover {
     font-size: 50px;
     color: var(--texto_cabecalho_2);
     border-bottom: 2px solid var(--cccc);
-    width: 95.5%;
+    width: 105%;
+    margin-left: -8px;
   }
 }
 

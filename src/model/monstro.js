@@ -43,10 +43,10 @@ export const monstro = connection.define(
       type: Sequelize.STRING,
     },
     descricao: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
     caracteristica: {
-      type: Sequelize.STRING,
+      type: Sequelize.TEXT,
     },
   },
   {
