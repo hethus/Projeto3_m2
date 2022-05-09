@@ -1,156 +1,161 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
     <link rel="icon" href="/img/icon.ico" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
     <title>Cadastro</title>
-</head>
-<body>
+  </head>
+  <body>
     <%- include('./partials/header.ejs') %>
 
     <main>
-        <div id="teste">
-          <% if(message != "") {%> 
-            <%- include('./partials/alerts.ejs') %>
-          <% } %> 
-            <h2 class="titulo">Cadastro do monstro:</h2>
-            <br>
-            <section class="cadastro">
-                <section id="formulario">
-                    <form method="post" action="/cadastro">
-                      <fieldset id="fieldPrimario">
+      <div id="teste">
+        <% if(message != "") {%>
+          <%- include('./partials/alerts.ejs') %>
+        <% } %>
 
-                        <legend>Detalhes do Monstro!</legend>
-                        <hr>
+        <h2 class="titulo">Cadastro do monstro:</h2>
+        <br />
+        <section class="cadastro">
+          <section id="formulario">
+            <form method="post" action="/cadastro">
+              <fieldset id="fieldPrimario">
+                <legend>Detalhes do Monstro!</legend>
+                <hr />
 
-                        <fieldset>
-                          <label for="nome">Nome:</label>
-                          <input type="text" name="nome" required />
-                        </fieldset>
-                        <hr>
-                        
-                        <fieldset>
-                          <label for="idade">Idade:</label>
-                          <input type="text" name="idade" required />
-                        </fieldset>
-                        
-                        <hr>
+                <fieldset>
+                  <label for="nome">Nome:</label>
+                  <input type="text" name="nome" required />
+                </fieldset>
+                <hr />
 
-                        <fieldset>
-                          <label for="desastre">Nível de desastre:</label>
-                          <select name="desastre" required>
-                            <option value="">Selecionar</option>
-                            <option value="1">Fraco</option>
-                            <option value="2">Mediano</option>
-                            <option value="3">Forte</option>
-                            <option value="4">Muito Forte</option>
-                            <option value="5">Ameaça</option>
-                            <option value="6">Cataclisma</option>
-                          </select>
-                        </fieldset>
-                        <hr>
-                        <fieldset>
-                          <label for="altura">Altura:</label>
-                          <input type="text" name="altura" required />
-                        </fieldset>
-                        <hr>
-                        <fieldset>
-                          <label for="peso">Peso:</label>
-                          <input type="text" name="peso" required />
-                        </fieldset>
-                        <hr>
-                        <fieldset>
-                          <label for="agressivo">O monstro é agressivo?</label>
-                          <select name="agressivo" required>
-                            <option value="">Selecionar</option>
-                            <option value="1">Não</option>
-                            <option value="2">Sim</option>
-                        </select>
-                        </fieldset>
-                        <hr>
-                        <fieldset>
-                          <label for="sexo">Sexo:</label>
-                          <input type="text" name="sexo" required />
-                        </fieldset>  
-                        <hr>
-                        <fieldset>
-                          <label for="raca">Raça:</label>
-                          <input type="text" name="raca" required />
-                        </fieldset>
-                        <hr>
-                        <fieldset>
-                          <label for="pesquisador">Pesquisador:</label>
-                          <input type="text" name="pesquisador" required />
-                        </fieldset>
-                        <hr>
-            
-                        <fieldset>
-                          <label for="imagem">Imagem:</label>
-                          <input type="url" name="imagem" required />
-                        </fieldset>
-            
-                        
-                      </fieldset>
+                <fieldset>
+                  <label for="idade">Idade:</label>
+                  <input type="text" name="idade" required />
+                </fieldset>
 
-                      <fieldset id="fieldSecundario">
-                        <legend>Descrição do Monstro!</legend>
-                        <fieldset>
+                <hr />
 
-                          <textarea
-                              name="descricao"
-                              class="cade"
-                              cols="50"
-                              rows="5"
-                              required
-                          ></textarea>
-                        </fieldset>
-                      </fieldset>
+                <fieldset>
+                  <label for="desastre">Nível de desastre:</label>
+                  <select name="desastre" required>
+                    <option value="">Selecionar</option>
+                    <option value="1">Fraco</option>
+                    <option value="2">Mediano</option>
+                    <option value="3">Forte</option>
+                    <option value="4">Muito Forte</option>
+                    <option value="5">Ameaça</option>
+                    <option value="6">Cataclisma</option>
+                  </select>
+                </fieldset>
+                <hr />
+                <fieldset>
+                  <label for="altura">Altura:</label>
+                  <input type="text" name="altura" required />
+                </fieldset>
+                <hr />
+                <fieldset>
+                  <label for="peso">Peso:</label>
+                  <input type="text" name="peso" required />
+                </fieldset>
+                <hr />
+                <fieldset>
+                  <label for="agressivo">O monstro é agressivo?</label>
+                  <select name="agressivo" required>
+                    <option value="">Selecionar</option>
+                    <option value="1">Não</option>
+                    <option value="2">Sim</option>
+                  </select>
+                </fieldset>
+                <hr />
+                <fieldset>
+                  <label for="sexo">Sexo:</label>
+                  <input type="text" name="sexo" required />
+                </fieldset>
+                <hr />
+                <fieldset>
+                  <label for="raca">Raça:</label>
+                  <input type="text" name="raca" required />
+                </fieldset>
+                <hr />
+                <fieldset>
+                  <label for="pesquisador">Pesquisador:</label>
+                  <input type="text" name="pesquisador" required />
+                </fieldset>
+                <hr />
 
-                      <fieldset id="fieldTerceario">
-                        <legend>Características do Monstro!</legend>
-                        
-                        <fieldset>
-                          <textarea
-                          name="caracteristica"
-                          class="cade"
-                          cols="20"
-                          rows="5"
-                          required
-                          ></textarea>
-                        </fieldset>
-                        
-                      </fieldset>
+                <fieldset>
+                  <label for="imagem">Imagem:</label>
+                  <input type="url" name="imagem" required />
+                </fieldset>
+              </fieldset>
 
-                      <fieldset id="fieldQuarteario">
-                        <div id="envia">
-                          <p>Você assina que todos os dados fornecidos são verdadeiros?</p>
-                          <label class="toggle-check">
-                            <input type="checkbox" class="toggle-check-input" required oninvalid="this.setCustomValidity('É obrigatório que todas as informações sejam verdadeiras!')"
-                            oninput="this.setCustomValidity('')"/>
-                            <span class="toggle-check-text"></span>
-                          </label>
-                        </div>
-                        
-                        <button type="submit" class="botaoCadastro">Enviar</button>
-                      </fieldset>
-                    </form>
-                  </section>
-            </section>
-        </div>
+              <fieldset id="fieldSecundario">
+                <legend>Descrição do Monstro!</legend>
+                <fieldset>
+                  <textarea
+                    name="descricao"
+                    class="cade"
+                    cols="50"
+                    rows="5"
+                    required
+                  ></textarea>
+                </fieldset>
+              </fieldset>
+
+              <fieldset id="fieldTerceario">
+                <legend>Características do Monstro!</legend>
+
+                <fieldset>
+                  <textarea
+                    name="caracteristica"
+                    class="cade"
+                    cols="20"
+                    rows="5"
+                    required
+                  ></textarea>
+                </fieldset>
+              </fieldset>
+
+              <fieldset id="fieldQuarteario">
+                <div id="envia">
+                  <p>
+                    Você assina que todos os dados fornecidos são verdadeiros?
+                  </p>
+                  <label class="toggle-check">
+                    <input
+                      type="checkbox"
+                      class="toggle-check-input"
+                      required
+                      oninvalid="this.setCustomValidity('É obrigatório que todas as informações sejam verdadeiras!')"
+                      oninput="this.setCustomValidity('')"
+                    />
+                    <span class="toggle-check-text"></span>
+                  </label>
+                </div>
+
+                <button type="submit" class="botaoCadastro">Enviar</button>
+              </fieldset>
+            </form>
+          </section>
+        </section>
+      </div>
     </main>
-    
 
     <%- include('./partials/footer.ejs') %>
-</body>
+  </body>
 
-<script>
-  const closeAlert = () => {
+  <script>
+    const closeAlert = () => {
     const close = document.querySelector("#close-message");
-    const message = document.querySelector("#message");
+    const message = document.querySelector(".message");
 
     close.addEventListener("click", () => {
         message.style.display = "none";
@@ -162,5 +167,5 @@
 };
 
 closeAlert();
-</script>
+  </script>
 </html>

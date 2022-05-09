@@ -1,7 +1,7 @@
-import dotenv from 'dotenv';
-import express from 'express';
-import path from 'path';
-import { routers } from './src/routers/routers.js';
+import dotenv from "dotenv";
+import express from "express";
+import path from "path";
+import { routers } from "./src/routers/routers.js";
 
 dotenv.config();
 
@@ -11,8 +11,8 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.set('view engine', 'ejs');
-app.use(routers)
+app.set("view engine", "ejs");
+app.use(routers);
 app.use(express.static(path.join(__dirname, "public")));
 
 const port = process.env.PORT || 3000;

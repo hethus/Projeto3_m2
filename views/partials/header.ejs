@@ -1,64 +1,70 @@
 <header>
-    <a href="/"><img id="logo" src="" alt="logo Monstruario"></a>
-    <h1 id="header">MONSTRUARIO</h1>
+  <a href="/"><img id="logo" src="" alt="logo Monstruario" /></a>
+  <h1 id="header">MONSTRUARIO</h1>
 
+  <nav id="navegacao">
+    <button id="btn-mobile" aria-haspopup="true" aria-expanded="false">
+      <i class="bi bi-list"></i>
+    </button>
 
-    <nav id="navegacao">
-        <button id="btn-mobile" aria-haspopup="true" aria-expanded="false"><i class="bi bi-list"></i></button>
-        
-        <ul>
+    <ul>
+      <h1 id="nav">MONSTRUARIO</h1>
 
-            <h1 id="nav">MONSTRUARIO</h1>
+      <a href="/"><li>Home</li></a>
+      <a href="/cadastro"><li>Cadastro</li></a>
 
-            <a href="/"><li>Home</li></a>
-            <a href="/cadastro"><li>Cadastro</li></a>
-
-            <li>
-                <label class="toggle-check" for="switch">
-                    <input type="checkbox" class="toggle-check-input_dark_mode" id="switch"/>
-                    <span class="toggle-check-text_dark_mode"></span>
-                </label>
-            </li>
-        </ul>
-    </nav>
+      <li>
+        <label class="toggle-check" for="switch">
+          <input
+            type="checkbox"
+            class="toggle-check-input_dark_mode"
+            id="switch"
+          />
+          <span class="toggle-check-text_dark_mode"></span>
+        </label>
+      </li>
+    </ul>
+  </nav>
 </header>
 
 <script>
-    const nightModeStorage = localStorage.getItem('gmtNightMode');
-    const nightMode = document.querySelector('#switch');
+  const nightModeStorage = localStorage.getItem("gmtNightMode");
+  const nightMode = document.querySelector("#switch");
 
-    if (nightModeStorage) {
-        document.documentElement.classList.add('night-mode');
-        document.getElementById("logo").src="/img/black_new.png";
-        nightMode.checked = true;
-    } else {
-        document.getElementById("logo").src="/img/white_new.png";
-    };
+  if (nightModeStorage) {
+    document.documentElement.classList.add("night-mode");
+    document.getElementById("logo").src = "/img/black_new.png";
+    nightMode.checked = true;
+  } else {
+    document.getElementById("logo").src = "/img/white_new.png";
+  }
 
+  nightMode.addEventListener("click", () => {
+    document.documentElement.classList.toggle("night-mode");
 
-    nightMode.addEventListener('click', () => {
-    document.documentElement.classList.toggle('night-mode')
-
-    if (document.documentElement.classList.contains('night-mode')) {
-        localStorage.setItem('gmtNightMode', true)
-        document.getElementById("logo").src="/img/black_new.png";
-        return
+    if (document.documentElement.classList.contains("night-mode")) {
+      localStorage.setItem("gmtNightMode", true);
+      document.getElementById("logo").src = "/img/black_new.png";
+      return;
     }
-    localStorage.removeItem('gmtNightMode')
-    document.getElementById("logo").src="/img/white_new.png";  
-    });
+    localStorage.removeItem("gmtNightMode");
+    document.getElementById("logo").src = "/img/white_new.png";
+  });
 
-    const btnMobile = document.getElementById('btn-mobile');
+  const btnMobile = document.getElementById("btn-mobile");
 
-    function toggleMenu(event) {
-        if (event.type === 'touchstart') event.preventDefault();
-        const nav = document.getElementById('navegacao');
-        const but = document.getElementById('btn-mobile');
-        but.classList.toggle('active');
-        nav.classList.toggle('active');
-        event.currentTarget.setAttribute('aria-expanded', nav.classList.contains('active'));
-    }
+  function toggleMenu(event) {
+    if (event.type === "touchstart") event.preventDefault();
+    const nav = document.getElementById("navegacao");
+    const but = document.getElementById("btn-mobile");
+    but.classList.toggle("active");
+    nav.classList.toggle("active");
+    event.currentTarget.setAttribute(
+      "aria-expanded",
+      nav.classList.contains("active")
+    );
+  }
 
-    btnMobile.addEventListener('click', toggleMenu);
-    btnMobile.addEventListener('touchstart', toggleMenu);
+  btnMobile.addEventListener("click", toggleMenu);
+  btnMobile.addEventListener("touchstart", toggleMenu);
 </script>

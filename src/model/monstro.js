@@ -1,55 +1,58 @@
-import Sequelize from 'sequelize';
-import { connection } from '../database/connection.js';
+import Sequelize from "sequelize";
+import { connection } from "../database/connection.js";
 
-export const monstro = connection.define('registro', {
+export const monstro = connection.define(
+  "registro",
+  {
     id: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+      type: Sequelize.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
     },
-	nome: {
-        type: Sequelize.STRING,
+    nome: {
+      type: Sequelize.STRING,
     },
     idade: {
-        type: Sequelize.STRING,
+      type: Sequelize.STRING,
     },
-	desastre: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+    desastre: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
     },
-	altura: {
-        type: Sequelize.STRING,
+    altura: {
+      type: Sequelize.STRING,
     },
-	peso: {
-        type: Sequelize.STRING,
+    peso: {
+      type: Sequelize.STRING,
     },
-	agressivo: {
-        type: Sequelize.INTEGER,
-        allowNull: false
+    agressivo: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
     },
-	sexo: {
-        type: Sequelize.STRING,
+    sexo: {
+      type: Sequelize.STRING,
     },
-	raca: {
-        type: Sequelize.STRING,
+    raca: {
+      type: Sequelize.STRING,
     },
-	pesquisador: {
-        type: Sequelize.STRING,
+    pesquisador: {
+      type: Sequelize.STRING,
     },
-	imagem: {
-        type: Sequelize.STRING,
+    imagem: {
+      type: Sequelize.STRING,
     },
-	descricao: {
-        type: Sequelize.STRING,
+    descricao: {
+      type: Sequelize.STRING,
     },
-	caracteristica: {
-        type: Sequelize.STRING,
-    }
-}, {
+    caracteristica: {
+      type: Sequelize.STRING,
+    },
+  },
+  {
     freezeTableName: true,
     createdAt: false,
     updatedAt: false,
-    timestamp: false
-});
-
+    timestamp: false,
+  }
+);
